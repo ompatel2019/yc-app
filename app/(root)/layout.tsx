@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AuthProvider from "@/app/providers/SessionProvider";
 import "@/app/globals.css";
 import Navbar from "@/app/components/navbar";
 
@@ -15,10 +14,8 @@ export default function GroupLayout({
 }) {
   return (
     <>
-      <AuthProvider>
-        <Navbar />
-        {children}
-      </AuthProvider>
+      <Navbar />
+      {children}
     </>
   );
 }
