@@ -1,3 +1,4 @@
+// lib/fonts.ts (already correct!)
 import localFont from "next/font/local";
 
 export const workSans = localFont({

@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
 
 const page = () => {
   return (
-    <h1 className='heading'>Home</h1>
-  )
-}
+    <>
+      <section className="pink_container">
+        <h1 className="heading">
+          Pitch Your Starup, <br /> Connect With Entrepreneurs
+        </h1>
 
-export default page
+        <p className="sub-heading !max-w-3xl">
+          Submit Ideas, Vote on Pitches, and Get Noticed in Virtual
+          Competitions.
+        </p>
+      </section>
+    </>
+  );
+};
+
+export default page;

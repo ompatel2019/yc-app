@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/components/navbar";
-import "../globals.css"
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: "YC App",
