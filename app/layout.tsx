@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { workSans } from "@/lib/fonts";
 import AuthProvider from "@/app/providers/SessionProvider";
-import "@/app/globals.css";
+import "./globals.css"
 
 export default function RootLayout({
   children,
