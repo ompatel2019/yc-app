@@ -3,8 +3,8 @@ import "@/app/globals.css";
 import Navbar from "@/app/components/navbar";
 
 export const metadata: Metadata = {
-  title: "Your App Title",
-  description: "Page description here",
+  title: "YC App",
+  description: "Pitch, Vote and Grow",
 };
 
 export default function GroupLayout({
