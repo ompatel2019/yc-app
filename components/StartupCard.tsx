@@ -60,14 +60,13 @@ export default function StartupCard({ post }: { post: StartupCardType }) {
         <p className="startup-card_desc">{description}</p>
       </Link>
 
-      <div className="relative w-full h-64">
-        <Image
-          src={image}
-          alt="placeholder"
-          className="startup-card_img"
-          fill
-        />
-      </div>
+      <Image
+        src={image}
+        alt={title}
+        width={400}
+        height={250}
+        className="startup-card_img rounded-xl object-cover w-full h-auto"
+      />
 
       <div className="flex-between gap-3 mt-5">
         <Link href={`/?query=${category.toLowerCase()}`}>
