@@ -2,13 +2,12 @@
 
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
-// ❌ REMOVE structureTool import
 // import { structureTool } from 'sanity/structure'
 
 import { apiVersion, dataset, projectId } from './sanity/env'
 import { schema } from './sanity/schemaTypes'
-// ❌ Optional: remove this too if you're not using custom structure yet
-// import { structure } from './sanity/structure'
+import { structure } from './sanity/structure'
+import { markdownSchema } from 'sanity-plugin-markdown'
 
 export default defineConfig({
   basePath: '/studio',
@@ -16,7 +15,8 @@ export default defineConfig({
   dataset,
   schema,
   plugins: [
-    // ❌ REMOVE structureTool
+    // structureTool({ structure }),
     visionTool({ defaultApiVersion: apiVersion }),
+    markdownSchema(),
   ],
 })
