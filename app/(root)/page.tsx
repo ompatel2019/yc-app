@@ -8,9 +8,9 @@ type HomeProps = {
 };
 
 export default async function Home({ searchParams }: HomeProps) {
-  const params = await searchParams;
-  const query = params?.query ?? "";
-  const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY });
+  const query = (await searchParams).query;
+  const params = { search: query || null };
+  const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params });
 
   return (
     <>

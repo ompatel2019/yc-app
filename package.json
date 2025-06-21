@@ -14,7 +14,7 @@
   },
   "packageManager": "npm@10.5.2",
   "resolutions": {
-    "@sanity/client": "7.6.0"
+    "@sanity/client": "7.6.0" 
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
