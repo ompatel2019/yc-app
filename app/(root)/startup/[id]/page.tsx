@@ -10,12 +10,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export const experimental_ppr = true;
 
-type StartupProp = {
-  params: { id: string };
-};
-
-export default async function Page({ params }: StartupProp) {
-  const { id } = params;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   const post = await client.fetch(STARTUP_BY_ID_QUERY, { id });
 
   if (!post) return notFound();

@@ -1,6 +1,4 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [
@@ -11,7 +9,7 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
-    ppr: "incremental",
+    ppr: "incremental", 
   },
 };
 
