@@ -1,3 +1,4 @@
+// app/api/views/[id]/route.ts
 import { writeClient } from "@/sanity/lib/write-client";
 import { NextResponse } from "next/server";
 
@@ -6,8 +7,13 @@ export async function POST(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params;
+
   try {
-    await writeClient.patch(id).inc({ views: 1 }).commit();
+    await writeClient
+      .patch(id)
+      .setIfMissing({ views: 0 }) 
+      .inc({ views: 1 })
+      .commit();
 
     return NextResponse.json({ success: true });
   } catch (error) {
