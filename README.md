@@ -43,7 +43,6 @@ npm install
 
 Then, run the dev server:
 
-```bash
 npm run dev
 ```
 
@@ -134,6 +133,6 @@ This project was built as a real-world learning experience with advanced fullsta
 
 ## 📜 License
 
-MIT
+This project is licensed under the MIT License.
 
 ```
