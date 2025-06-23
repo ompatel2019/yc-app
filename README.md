@@ -1,5 +1,4 @@
-````md
-# YC Clone 🦄
+## YC Clone 🦄
 
 A YC-style startup showcase platform built with **Next.js 15**, **Sanity CMS**, **Tailwind CSS**, and **GitHub authentication**. Users can explore startups, search in real-time, and post their own — all backed by a modern fullstack stack.
 
@@ -41,7 +40,6 @@ cd yc-app
 
 npm install
 # or: yarn / pnpm / bun install
-````
 
 Then, run the dev server:
 
