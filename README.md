@@ -134,5 +134,3 @@ This project was built as a real-world learning experience with advanced fullsta
 ## 📜 License
 
 This project is licensed under the MIT License.
-
-```
