@@ -1,59 +1,141 @@
-This is a simple Next.js demo that uses Tailwind CSS and NextAuth for GitHub authentication.
-It was bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+````md
+# YC Clone 🦄
 
-## Getting Started
+A YC-style startup showcase platform built with **Next.js 15**, **Sanity CMS**, **Tailwind CSS**, and **GitHub authentication**. Users can explore startups, search in real-time, and post their own — all backed by a modern fullstack stack.
 
-First, install the dependencies and run the development server:
+> ✅ Deployed at: [yc-app-bay.vercel.app](https://yc-app-bay.vercel.app)
+
+---
+
+## 🛠️ Stack Overview
+
+| Layer       | Tech Used                           | Description |
+|------------|--------------------------------------|-------------|
+| Frontend   | Next.js 15 (App Router)              | SSR + partial pre-rendering |
+| Styling    | Tailwind CSS + shadcn/ui             | Utility-first responsive styling |
+| Auth       | NextAuth.js with GitHub Provider     | Secure OAuth-based login |
+| CMS        | Sanity (Content Lake + GROQ)         | Stores startups & user data |
+| Images     | next/image + remote pattern config   | Optimized image delivery |
+| Hosting    | Vercel                               | CI/CD + global edge network |
+
+---
+
+## 🚀 Features
+
+- ✅ **Browse All Startups** – Cards with logo, title, description, author, and views
+- 🔍 **Real-Time Search** – Search bar updates results instantly via URL params
+- 👤 **User Profiles** – Each startup shows the author with profile linking
+- ✍️ **Submit Startups** – Authenticated users can publish new startups
+- 🔐 **GitHub Auth** – Login and access control via GitHub OAuth
+- 💨 **Fully Responsive** – Works beautifully on mobile and desktop
+
+---
+
+## 🧪 Getting Started
+
+First, clone the repo and install dependencies:
 
 ```bash
-# install dependencies
-npm install
+git clone https://github.com/ompatel2019/yc-app.git
+cd yc-app
 
-# start the dev server
+npm install
+# or: yarn / pnpm / bun install
+````
+
+Then, run the dev server:
+
+```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-### Environment variables
+## 🔐 Environment Variables
 
-Authentication requires a GitHub OAuth application. Copy `.env.example` to `.env.local` and fill in your credentials:
+You’ll need to set up a GitHub OAuth app + Sanity project.
+
+Copy `.env.example` to `.env.local`:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Edit `.env.local` and provide your `GITHUB_ID` and `GITHUB_SECRET` values.
+Then populate the following:
 
-### Available scripts
+```env
+GITHUB_ID=your-client-id
+GITHUB_SECRET=your-client-secret
+NEXTAUTH_SECRET=random-secret
+NEXTAUTH_URL=http://localhost:3000
 
-- `npm run dev` – start the development server
-- `npm run build` – build for production
-- `npm start` – run the production build
-- `npm run lint` – lint the codebase
+NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2024-06-01
+SANITY_WRITE_TOKEN=your-sanity-write-token
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧱 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```txt
+app/
+├─ page.tsx                 // homepage listing
+├─ startup/                 // startup details + create page
+├─ user/                   // author profile
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+components/
+├─ Navbar.tsx
+├─ StartupCard.tsx
+├─ StartupForm.tsx
+├─ Skeleton.tsx
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+lib/
+├─ actions.ts              // server actions
+├─ client.ts               // Sanity client
+├─ queries.ts              // GROQ queries
+├─ utils.ts
 
-## Deploy on Vercel
+sanity/
+├─ schemas/                // author, startup, blockContent
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
+## 📦 Scripts
 
-This project is licensed under the MIT License.
+* `npm run dev` – Start dev server
+* `npm run build` – Create production build
+* `npm run start` – Serve the production build
+* `npm run lint` – Lint codebase
+* `npm run typegen` – Generate Sanity types
+
+---
+
+## 🌐 Deploying to Vercel
+
+This project is production-ready and deploys perfectly to [Vercel](https://vercel.com). Just:
+
+1. Connect your GitHub repo
+2. Add environment variables in the Vercel dashboard
+3. Click "Deploy" — done!
+
+---
+
+## 👨‍💻 Author
+
+Made with 💻 and ☕ by **Om Patel**
+→ [@ompatel2019](https://github.com/ompatel2019)
+
+This project was built as a real-world learning experience with advanced fullstack workflows. Even though it started with a tutorial, it was extended and debugged through deep hands-on work.
+
+---
+
+## 📜 License
+
+MIT
+
+```
