@@ -50,32 +50,6 @@ Visit [http://localhost:3000](http://localhost:3000) to see the app.
 
 ---
 
-## 🔐 Environment Variables
-
-You’ll need to set up a GitHub OAuth app + Sanity project.
-
-Copy `.env.example` to `.env.local`:
-
-```bash
-cp .env.example .env.local
-```
-
-Then populate the following:
-
-```env
-GITHUB_ID=your-client-id
-GITHUB_SECRET=your-client-secret
-NEXTAUTH_SECRET=random-secret
-NEXTAUTH_URL=http://localhost:3000
-
-NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
-NEXT_PUBLIC_SANITY_DATASET=production
-NEXT_PUBLIC_SANITY_API_VERSION=2024-06-01
-SANITY_WRITE_TOKEN=your-sanity-write-token
-```
-
----
-
 ## 🧱 Project Structure
 
 ```txt
@@ -109,25 +83,6 @@ sanity/
 * `npm run start` – Serve the production build
 * `npm run lint` – Lint codebase
 * `npm run typegen` – Generate Sanity types
-
----
-
-## 🌐 Deploying to Vercel
-
-This project is production-ready and deploys perfectly to [Vercel](https://vercel.com). Just:
-
-1. Connect your GitHub repo
-2. Add environment variables in the Vercel dashboard
-3. Click "Deploy" — done!
-
----
-
-## 👨‍💻 Author
-
-Made with 💻 and ☕ by **Om Patel**
-→ [@ompatel2019](https://github.com/ompatel2019)
-
-This project was built as a real-world learning experience with advanced fullstack workflows. Even though it started with a tutorial, it was extended and debugged through deep hands-on work.
 
 ---
 
